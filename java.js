@@ -57,27 +57,42 @@
 getBill();*/
 
 /* onclick property*/
-const btn = document.querySelector('#v2');
-btn.onclick = function() {
-      console.log("you clicked me!");
-      console.log("i hope it worked");
-}
-function scream(){
-      console.log("ahhhhhhhh!");
-      console.log("stop clicking me");
-}
-btn.onmouseenter = scream;
-/* addEventListener method*/
-const btn3 = document.querySelector('#v3');
-btn3.addEventListener('click',function() {
-      console.log("you clicked me!");
+// const btn = document.querySelector('#v2');
+// btn.onclick = function() {
+//       console.log("you clicked me!");
+//       console.log("i hope it worked");
+// }
+// function scream(){
+//       console.log("ahhhhhhhh!");
+//       console.log("stop clicking me");
+// }
+// btn.onmouseenter = scream;
+// /* addEventListener method*/
+// const btn3 = document.querySelector('#v3');
+// btn3.addEventListener('click',function() {
+//       console.log("you clicked me!");
+// })
+// const btntas = document.querySelector('#tas');
+// function twist(){
+//       console.log("twist");
+// }
+// function shout(){
+//       console.log("shout");
+// }
+// btntas.addEventListener('click',twist);
+// btntas.addEventListener('click',shout);
+// btntas.addEventListener('click',function(){
+
+      /* Small Exercise*/
+const button = document.querySelector('#v2');
+const h1 = document.querySelector('h1');
+button.addEventListener('click', function(){
+      const r = Math.floor(Math.random() * 255);
+      const g = Math.floor(Math.random() * 255);
+      const b = Math.floor(Math.random() * 255);  
+      const newColor = `rgb(${r}, ${g}, ${b})`;
+      document.body.style.backgroundColor = newColor;
+      h1.innerText = newColor;
 })
-const btntas = document.querySelector('#tas');
-function twist(){
-      console.log("twist");
-}
-function shout(){
-      console.log("shout");
-}
-btntas.addEventListener('click',twist);
-btntas.addEventListener('click',shout);
+
+      
