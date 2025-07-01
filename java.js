@@ -56,5 +56,14 @@
 }    
 getBill();*/
 
-
-
+/* onclick property*/
+const btn = document.querySelector('#v2');
+btn.onclick = function() {
+      console.log("you clicked me!");
+      console.log("i hope it worked");
+}
+function scream(){
+      console.log("ahhhhhhhh!");
+      console.log("stop clicking me");
+}
+btn.onmouseenter = scream;
