@@ -67,3 +67,17 @@ function scream(){
       console.log("stop clicking me");
 }
 btn.onmouseenter = scream;
+/* addEventListener method*/
+const btn3 = document.querySelector('#v3');
+btn3.addEventListener('click',function() {
+      console.log("you clicked me!");
+})
+const btntas = document.querySelector('#tas');
+function twist(){
+      console.log("twist");
+}
+function shout(){
+      console.log("shout");
+}
+btntas.addEventListener('click',twist);
+btntas.addEventListener('click',shout);
