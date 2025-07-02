@@ -84,15 +84,50 @@ getBill();*/
 // btntas.addEventListener('click',function(){
 
       /* Small Exercise*/
-const button = document.querySelector('#v2');
-const h1 = document.querySelector('h1');
-button.addEventListener('click', function(){
-      const r = Math.floor(Math.random() * 255);
-      const g = Math.floor(Math.random() * 255);
-      const b = Math.floor(Math.random() * 255);  
-      const newColor = `rgb(${r}, ${g}, ${b})`;
-      document.body.style.backgroundColor = newColor;
-      h1.innerText = newColor;
-})
+// const button = document.querySelector('#v2');
+// const h1 = document.querySelector('h1');
+// button.addEventListener('click', function(){
+//       const r = Math.floor(Math.random() * 255);
+//       const g = Math.floor(Math.random() * 255);
+//       const b = Math.floor(Math.random() * 255);  
+//       const newColor = `rgb(${r}, ${g}, ${b})`;
+//       document.body.style.backgroundColor = newColor;
+//       h1.innerText = newColor;
+// })
 
-      
+     /* Event Objects*/
+
+// document.querySelector('button').addEventListener('click',function(evt){
+//       console.log(evt)
+// })
+// const input = document.querySelector('input');
+// input.addEventListener('keydown',function(e){
+//       console.log(e.code);
+//       console.log(e.key);
+//    }) 
+      // const input1 = document.querySelector('input');
+// input1.addEventListener('keyup',function(){
+//       console.log("keyup");
+// }) 
+
+// window.addEventListener('keydown',function(e){
+//       switch(e.code){
+//             case 'ArrowUp':
+//                   console.log("up");
+//                   break;
+//             case 'ArrowDown':
+//                   console.log("down");
+//                   break;
+//             case 'ArrowLeft':
+//                   console.log("left");
+//                   break;
+//             default:
+//                   console.log("ignored");
+//       }
+        
+// });
+const form = document.querySelector('#shelterForm');
+form.addEventListener('submit',function(e){
+      e.preventDefault();
+      console.log("submitted the form!");
+})
