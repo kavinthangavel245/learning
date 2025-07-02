@@ -126,8 +126,39 @@ getBill();*/
 //       }
         
 // });
-const form = document.querySelector('#shelterForm');
-form.addEventListener('submit',function(e){
+// const form = document.querySelector("#shelterForm");
+// const input = document.querySelector("#catName");
+// const list = document.querySelector("#cats")
+// form.addEventListener("submit",function (e) {
+//       e.preventDefault();
+//       const catName = input.value;
+//       const newli = document.createElement("li");
+//       newli.innerText = catName;
+//       list.append(newli);
+//       input.value = "";
+      
+// });
+const dogform = document.querySelector("#dogForm");
+const tweetsContainer = document.querySelector("#tweets");
+dogform.addEventListener('submit',function (e){
       e.preventDefault();
-      console.log("submitted the form!");
-})
+      // const usernameInput = document.querySelectorAll('input')[0];
+      // const tweetInput = document.querySelectorAll('input')[1];
+      // console.log(usernameInput.value,tweetInput.value);
+      // console.log("submitted");
+      const usernameInput =dogform.elements.username;
+      const tweetInput = dogform.elements.tweet;
+      nt(usernameInput.value,tweetInput.value);
+      usernameInput.value = '';
+      tweetInput.value = '';
+
+});
+const nt = (username,tweet) => {
+      const newli = document.createElement("li");
+      const bold = document.createElement("b");
+      bold.append(username);
+      newli.append(bold);
+      newli.append(`-${tweet}`);
+      tweetsContainer.append(newli);
+
+}
