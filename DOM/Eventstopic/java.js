@@ -162,3 +162,6 @@ const nt = (username,tweet) => {
       tweetsContainer.append(newli);
 
 }
+tweetsContainer.addEventListener('click',function(e){
+      e.target.nodeName ==='LI' && e.target.remove();
+})
