@@ -57,22 +57,53 @@
 //                 console.log("Error: ", err);
 //             });
 
-const delayedColorChange = (newColor, delay) => {
+// const delayedColorChange = (newColor, delay) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             document.body.style.backgroundColor = newColor;
+//             console.log("changed to new color: " + newColor);
+//             resolve();
+//         }, delay);
+//     });
+// }
+//     delayedColorChange("red",1000)
+//         .then(() => delayedColorChange("blue", 1000))
+//         .then(() => delayedColorChange("green", 1000))
+//         .then(() => delayedColorChange("yellow", 1000)) 
+//         .then(() => delayedColorChange("pink", 1000))
+//         .then(() => delayedColorChange("purple", 1000))
+//         .then(() => console.log("All colors changed!"))
+//         .catch((err) => {   
+//             console.error("An error occurred:", err);
+//         });                 
+
+// async and await example
+function fakeRequestPromise(url) {
+    console.log("Request made to: " + url);
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            document.body.style.backgroundColor = newColor;
-            console.log("changed to new color: " + newColor);
-            resolve();
-        }, delay);
+            const success = Math.random() > 0.3; // 70% chance of success
+            if (success) {
+                resolve(`Here is your fake data from ${url}`);
+            } else {
+                reject("Request failed!");
+            }
+        }, 1000);
     });
 }
-    delayedColorChange("red",1000)
-        .then(() => delayedColorChange("blue", 1000))
-        .then(() => delayedColorChange("green", 1000))
-        .then(() => delayedColorChange("yellow", 1000)) 
-        .then(() => delayedColorChange("pink", 1000))
-        .then(() => delayedColorChange("purple", 1000))
-        .then(() => console.log("All colors changed!"))
-        .catch((err) => {   
-            console.error("An error occurred:", err);
-        });                 
+
+
+async function loadPages(){
+    try{
+        await fakeRequestPromise("page1");
+        console.log("Page 1 loaded successfully!");
+        await fakeRequestPromise("page2");
+        console.log("Page 2 loaded successfully!");
+        await fakeRequestPromise("page3");
+        console.log("Page 3 loaded successfully!");
+    }
+    catch(err){
+        console.log("error",err);
+    }
+}
+loadPages();
